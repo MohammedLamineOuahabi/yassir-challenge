@@ -1,5 +1,7 @@
 # Project: Air quality
 
+Check the live demo at [https://air-quality-emsy.onrender.com](https://air-quality-emsy.onrender.com).
+
 ## The principle steps that i took :
 1. Obtain the API key required for the project.
 
@@ -36,7 +38,7 @@ StartFragment
 The GET endpoint for nearest city data direct from My API is a web API request that retrieves air quality data for the nearest city to a given location, based on the provided latitude and longitude.
 #### Method: GET
 >```
->http://localhost:3333/api/v1/pollution?latitude=46.2276&longitude=2.2137
+>https://air-quality-emsy.onrender.com/api/v1/pollution?latitude=46.2276&longitude=2.2137
 >```
 #### Query Params
 
@@ -55,7 +57,7 @@ StartFragment
 The GET endpoint "mostPollutedDatetime" from My API retrieves information on the most polluted time in France, based on data that is automatically stored using a cron job every 1 minut.
 #### Method: GET
 >```
->http://localhost:3333/api/v1/pollution/mostPollutedDatetime
+>https://air-quality-emsy.onrender.com/api/v1/pollution/mostPollutedDatetime
 >```
 
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
