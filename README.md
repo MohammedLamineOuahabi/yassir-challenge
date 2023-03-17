@@ -10,7 +10,7 @@
 1. Create async global error handler, and a global route to handle inexistant routes ,that render an html file. 
 
 1. Create a MySQL database on your preferred cloud host, such as cloudclusters.io.
-
+1. I used node-cron package to set up a job that executes every minute to store the pollution level and datetime in France in a MySQL database.
 1. Generate a favicon for the application using a tool such as favicon.io. This will give the app a more professional appearance and prevent any "no such file or directory" errors.
 
 1. Connect to the database using environment variables to avoid sharing your credentials in the public repository.

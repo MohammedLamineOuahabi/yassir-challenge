@@ -1,4 +1,3 @@
-const fs = require('fs');
 const axios = require('axios');
 
 const catchAsync = require('../utils/catchAsync');
@@ -11,7 +10,7 @@ const nearestCityPollutionByLatLon = async (lat, lon) => {
   try {
     const response = await axios.get(apiUrl);
 
-    return { status: 500, data: { Pollution: response.data?.data?.current?.pollution } };
+    return { status: 200, data: { Pollution: response.data.data.current.pollution } };
   } catch (error) {
     console.log(error);
     return { status: 500, data: { message: 'Error fetching data from external API' } };

@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 const morgan = require('morgan');
@@ -12,30 +13,18 @@ const pollution = require('./routes/pollutionRouter');
 
 const app = express();
 
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
+// to parse income data
 app.use(express.json());
 
+//enable CORS for all routes in the  application (i know it's not recommended )
+app.use(cors());
+
+// some useful middleware
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(helmet());
 app.use(compression());
 app.use(express.static(__dirname + '/public'));
-
-// Test middleware
-app.use((req, res, next) => {
-  //req.requestTime = new Date().toISOString();
-  console.log(req.body);
-  next();
-});
-
-//  Server UTC time
-app.get('/api/time', (req, res) => {
-  res.send({ time: new Date().toISOString() });
-});
 
 app.use('/api/v1/pollution', pollution);
 
@@ -46,6 +35,7 @@ app.all('*', (req, res, next) => {
   res.sendFile(filePath);
 });
 
+// as the name explains a global error handler
 app.use(globalErrorHandler);
 
 module.exports = app;
