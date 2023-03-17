@@ -8,7 +8,7 @@ const path = require('path');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 
-const nearestCity = require('./routes/cityPollutionRouter');
+const pollution = require('./routes/pollutionRouter');
 
 const app = express();
 
@@ -37,7 +37,7 @@ app.get('/api/time', (req, res) => {
   res.send({ time: new Date().toISOString() });
 });
 
-app.use('/api/v1/nearestCityPollution', nearestCity);
+app.use('/api/v1/pollution', pollution);
 
 //  when other route than the endpoints routes,
 //  display a nice message by return an html document
